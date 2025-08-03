@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Sistema de Censo Poblacional</h1>
+        
+        <!-- Formulario de registro -->
+        <div class="seccion">
+            <h2>Registro de Personas</h2>
+            <form id="formularioCenso">
+                <div class="grupo-formulario">
+                    <label for="nombre">Nombres:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                
+                <div class="grupo-formulario">
+                    <label for="apellido">Apellidos:</label>
+                    <input type="text" id="apellido" required>
+                </div>
+                
+                <div class="grupo-formulario">
+                    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fechaNacimiento" required>
+                </div>
+                
+                <div class="grupo-formulario">
+                    <label for="sexo">Sexo:</label>
+                    <select id="sexo" required>
+                        <option value="">Seleccione...</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                        
+                    </select>
+                </div>
+                
+                <div class="grupo-formulario">
+                    <label for="lugarNacimiento">Lugar de Nacimiento:</label>
+                    <input type="text" id="lugarNacimiento" required>
+                </div>
+                
+                <button type="submit">Registrar Persona</button>
+            </form>
+        </div>
+        
+        <!-- Historial de registros -->
+        <div class="seccion">
+            <h2>Historial de Registros</h2>
+            <div id="listaCenso">
+                <p>No hay registros aún. Agrega personas usando el formulario.</p>
+            </div>
+        </div>
+        
+        <!-- Filtros -->
+        <div class="seccion" style="grid-column: 1 / -1;">
+            <h2>Filtros y Estadísticas</h2>
+            
+            <div class="seccion-filtros">
+                <input type="number" id="filtroEdad" placeholder="Filtrar por edad">
+                <input type="text" id="filtroLugarNacimiento" placeholder="Filtrar por lugar de nacimiento">
+                <button id="botonFiltrar">Filtrar</button>
+                <button id="reiniciarFiltros">Resetear</button>
+            </div>
+            
+            <div id="resultadosFiltro">
+                <p>Usa los filtros para ver estadísticas.</p>
+            </div>
+            
+            <div class="estadisticas" id="estadisticasEdad">
+                <h3>Estadísticas por Edad y Lugar</h3>
+                <div id="contenidoEstadisticas"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
